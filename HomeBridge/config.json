@@ -1,11 +1,10 @@
 {
     "bridge": {
         "name": "AccendorsBridge",
-        "username": "02:42:3c:53:e8:27",
+        "username": "02:42:3C:53:E8:27",
         "port": 51826,
         "pin": "188-19-140"
     },
-
     "platforms": [{
         "platform": "HomeAssistant",
         "name": "HomeAssistant",
