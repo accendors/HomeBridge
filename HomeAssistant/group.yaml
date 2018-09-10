@@ -1,0 +1,26 @@
+ default_view:         # 默认首页 即 HOME 页
+ view: yes             # 是否分页 即在页头显示
+ entities:             # 第一个分页下的设备与组
+   - sun.sun
+   - sensor.now_weather
+   - sensor.now_tmp
+   - group.Today
+   - group.SystemMonitor
+   - group.Rooms
+ rooms_view:             # 这是整个 ROOMS 页的设置
+   name: ROOMS           # 显示名称
+   view: yes             # 是否分页 即在页头显示
+   entities:             # ROOM 分页下的组
+     - group.Entrance    # 玄关
+     - group.LivingRoom
+     - group.DinnerRoom
+     - group.CookRoom
+     - group.BedRoom1
+     - group.BedRoom2
+ devices_view:           # 这是整个 DEVICES 页的设置
+   name: DEVICES         # 显示名称
+   view: yes             # 是否分页 即在页头显示
+   entities:
+     - group.Lights
+     - media_player.marantz_nr1504
+     - group.Battery

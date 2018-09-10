@@ -2,14 +2,14 @@ homeassistant:
   # Name of the location where Home Assistant is running
   name: Home
   # Location required to calculate the time the sun rises and sets
-  latitude: 0
+  latitude: 22.984319
   longitude: 0
   # Impacts weather/sunrise data (altitude above sea level in meters)
-  elevation: 0
+  elevation: 113.018677
   # metric for Metric, imperial for Imperial
   unit_system: metric
   # Pick yours from here: http://en.wikipedia.org/wiki/List_of_tz_database_time_zones
-  time_zone: UTC
+  time_zone: Asia/Shanghai
   # Customization file
   customize: !include customize.yaml
 
@@ -19,6 +19,7 @@ introduction:
 
 # Enables the frontend
 frontend:
+ themes: !include_dir_merge_named themes
 
 # Enables configuration UI
 config:
@@ -56,6 +57,12 @@ map:
 # Track the sun
 sun:
 
+panel_iframe:
+ router:               #面板名称
+   title: Accendors Pro       #标题（必填）,在侧面板中显示。
+   icon: mdi:Nas         #图标（可选）
+   url: https://www.accendors.com:5001/ #要打开的URL（必填）。
+
 # 12 characters MAC can be obtained from the xiaomi gateway.
 xiaomi_aqara:
   gateways:
@@ -67,6 +74,15 @@ xiaomi_aqara:
       key: 293D0E6FE1914B4D
     - mac: 78:11:DC:DE:C2:23
       key: 60B44DCFAF4441C4
+
+light:
+  - platform: yeelight
+    devices:
+      10.56.1.202: #多个 Yeelight 接入。
+        name: Right Bed Lamp
+        transition: 1000
+        use_music_mode: false #(音乐随动模式，默认关闭)
+        save_on_change: true #(记忆设置，默认开启)
 
 device_tracker:
   - platform: asuswrt
